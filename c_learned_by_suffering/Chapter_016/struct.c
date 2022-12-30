@@ -1,9 +1,24 @@
 #include <stdio.h>
 #include <string.h>
 
-void student_print(student, data)
-{
+typedef struct {
+    int year;
+    int cls;
+    int number;
+    char name[64];
+    double stature;
+    double weight;
+} student2;
 
+void student_print(student2 data)
+{
+    printf("year = %d\n", data.year);
+    printf("cls = %d\n", data.cls);
+    printf("number = %d\n", data.number);
+    printf("name = %s\n", data.name);
+    printf("stature = %f\n", data.stature);
+    printf("weight = %f\n", data.weight);
+    return;
 }
 
 struct student {
@@ -41,6 +56,15 @@ int main(void)
 
     strcpy(data2.name, "Jiro");
     printf("name = %s\n", data2.name);
+
+    student2 data3;
+    data3.year = 3;
+    data3.cls = 4;
+    data3.number = 18;
+    data3.stature = 175.5;
+    data3.weight = 60.5;
+
+    student_print(data3);
 
     return 0;
 }
